@@ -1,0 +1,117 @@
+/* ============================================================================
+   FlashMind — Responsive CSS
+   ============================================================================ */
+
+/* ── Default Desktop Styling for Mobile Elements ── */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 17, 23, 0.4);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  z-index: 40;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-slow);
+}
+
+#mobile-menu-btn {
+  display: none;
+}
+
+/* ── Mobile Breakpoint ── */
+@media (max-width: 768px) {
+
+  /* Sidebar responsive slide-in */
+  .sidebar {
+    position: fixed;
+    left: -260px;
+    z-index: 50;
+    transition: left var(--transition-slow);
+    height: 100%;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  /* Overlay backdrop linkage */
+  .sidebar.open~.sidebar-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Show mobile menu toggle button */
+  #mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Layout spacing adjustments */
+  .top-bar {
+    padding: var(--space-4);
+  }
+
+  .page-content {
+    padding: var(--space-4);
+  }
+
+  /* Stat cards grid */
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Dashboard deck cards stack to single column */
+  .deck-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Study session layout & cards */
+  .study-view {
+    width: 100%;
+    padding: 0 var(--space-3);
+  }
+
+  .flashcard-scene {
+    width: 100%;
+    height: 260px;
+    margin-bottom: var(--space-6);
+  }
+
+  .flashcard__text {
+    font-size: var(--text-xl);
+  }
+
+  .rating-buttons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2);
+  }
+
+  /* Sidebar footer layout & collapse */
+  .sidebar__footer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  /* Enforce all tap targets to be minimum 44px height for accessibility */
+  .btn,
+  .btn-icon,
+  .nav-item,
+  .toggle-switch,
+  .rating-btn,
+  .form-input,
+  .form-textarea,
+  .modal__header .btn-icon {
+    min-height: 44px;
+    box-sizing: border-box;
+  }
+
+  /* Adjust padding and alignment to keep minimum 44px buttons visually balanced */
+  .btn-sm,
+  .btn-icon {
+    padding-top: var(--space-2);
+    padding-bottom: var(--space-2);
+  }
+}
