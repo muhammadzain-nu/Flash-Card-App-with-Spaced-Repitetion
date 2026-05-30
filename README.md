@@ -11,4 +11,4 @@ The project is developed using:\
 ● HTML\
 ● CSS\
 ● Vanilla JavaScript\
-No backend or frameworks are required\
+No backend or frameworks are required
