@@ -1,7 +1,7 @@
 # Flash-Card-App-with-Spaced-Repitetion
-##Muhammad Zain's Contributions:\
+## Muhammad Zain's Contributions:
 
-Core Logic + Integration\
+Core Logic + Integration
 
 Responsibilities:
 
