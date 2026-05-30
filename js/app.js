@@ -15,8 +15,8 @@
 // CONSTANTS
 // ─────────────────────────────────────────────────────────────────────────────
 
-const STORAGE_KEY = 'flashcard_app_data';
-const VERSION = '1.0.0';
+const STORAGE_KEY  = 'flashcard_app_data';
+const VERSION      = '1.0.0';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // APPLICATION STATE
@@ -233,13 +233,13 @@ function endStudySession() {
  */
 function getDashboardStats() {
   let totalCards = 0;
-  let dueToday = 0;
+  let dueToday   = 0;
   let everReviewed = 0;
   let successfullyReviewed = 0;
 
   for (const deck of AppState.decks) {
     totalCards += deck.cards.length;
-    dueToday += getDueCards(deck.cards).length;
+    dueToday   += getDueCards(deck.cards).length;
 
     for (const card of deck.cards) {
       if (card.lastReviewed !== null) {
@@ -255,7 +255,7 @@ function getDashboardStats() {
     : 0;
 
   return {
-    totalDecks: AppState.decks.length,
+    totalDecks:    AppState.decks.length,
     totalCards,
     dueToday,
     retentionRate,
